@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Kabaddi Counter</string>
+    <string name="team_b">Team B</string>
+    <string name="team_a">Team A</string>
+    <string name="reset">RESET</string>
+    <string name="_2">+2</string>
+    <string name="_1">+1</string>
+</resources>

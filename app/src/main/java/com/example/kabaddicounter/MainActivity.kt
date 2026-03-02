@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import com.example.kabaddicounter.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -21,38 +22,35 @@ class MainActivity : AppCompatActivity() {
         val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         //team A
-//        binding.tvTeamAScore.text = viewModel.scoreA.toString()
+        viewModel.scoreA.observe(this, Observer { newValue ->
+            binding.tvTeamAScore.text = newValue.toString()
+        })
 
         binding.add1BtnA.setOnClickListener {
             viewModel.incrementScoreByOne(true)
-            binding.tvTeamAScore.text = viewModel.scoreA.toString()
         }
 
         binding.add2BtnA.setOnClickListener {
             viewModel.incrementScoreByTwo(true)
-            binding.tvTeamAScore.text = viewModel.scoreA.toString()
         }
 
         //team B
-//        binding.tvTeamBScore.text = viewModel.scoreB.toString()
+        viewModel.scoreB.observe(this, Observer { newValue ->
+            binding.tvTeamBScore.text = newValue.toString()
+        })
 
         binding.add1BtnB.setOnClickListener {
             viewModel.incrementScoreByOne(false)
-            binding.tvTeamBScore.text = viewModel.scoreB.toString()
 
         }
 
         binding.add2BtnB.setOnClickListener {
             viewModel.incrementScoreByTwo(false)
-            binding.tvTeamBScore.text = viewModel.scoreB.toString()
-
         }
 
-        val resetBtn: Button = findViewById(R.id.resetBtn)
-        resetBtn.setOnClickListener {
+        //reset Button
+        binding.resetBtn.setOnClickListener {
             viewModel.resetScore(true)
-            binding.tvTeamBScore.text = viewModel.scoreB.toString()
-            binding.tvTeamBScore.text = viewModel.scoreB.toString()
         }
     }
 }

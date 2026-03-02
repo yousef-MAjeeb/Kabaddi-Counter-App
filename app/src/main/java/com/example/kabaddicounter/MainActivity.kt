@@ -18,13 +18,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+//        setContentView(R.layout.activity_main)
         val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
+        binding.viewModelVar = viewModel
+        binding.lifecycleOwner = this
+
         //team A
-        viewModel.scoreA.observe(this, Observer { newValue ->
-            binding.tvTeamAScore.text = newValue.toString()
-        })
+//        viewModel.scoreA.observe(this, Observer { newValue ->
+//            binding.tvTeamAScore.text = newValue.toString()
+//        })
 
         binding.add1BtnA.setOnClickListener {
             viewModel.incrementScoreByOne(true)
@@ -35,9 +38,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         //team B
-        viewModel.scoreB.observe(this, Observer { newValue ->
-            binding.tvTeamBScore.text = newValue.toString()
-        })
+//        viewModel.scoreB.observe(this, Observer { newValue ->
+//            binding.tvTeamBScore.text = newValue.toString()
+//        })
 
         binding.add1BtnB.setOnClickListener {
             viewModel.incrementScoreByOne(false)

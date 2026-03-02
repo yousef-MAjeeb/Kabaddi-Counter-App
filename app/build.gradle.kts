@@ -10,6 +10,11 @@ android {
         }
     }
 
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.kabaddicounter"
         minSdk = 24
@@ -44,4 +49,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.10.0")
+    implementation("androidx.activity:activity-ktx:1.12.4")
 }

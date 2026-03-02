@@ -24,7 +24,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:text="TextView"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/tvTeamA"
         app:layout_constraintStart_toStartOf="@+id/tvTeamA"
@@ -69,12 +68,13 @@
         android:id="@+id/tvTeamBScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:textSize="20sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tvTeamAScore"
+        app:layout_constraintBottom_toTopOf="@+id/add1BtnB"
         app:layout_constraintEnd_toEndOf="@+id/tvTeamB"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/tvTeamB" />
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="@+id/tvTeamB"
+        app:layout_constraintTop_toBottomOf="@+id/tvTeamB"
+        app:layout_constraintVertical_bias="0.489" />
 
     <Button
         android:id="@+id/add2BtnB"
